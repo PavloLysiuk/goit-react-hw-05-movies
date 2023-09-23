@@ -8,7 +8,7 @@ axios.defaults.baseURL = BASE_URL;
 export default async function fetchData(searchQuery, param = {}) {
   const options = {
     method: 'GET',
-    baseURL: BASE_URL,
+    // baseURL: BASE_URL,
     headers: {
       accept: 'application/json',
     },

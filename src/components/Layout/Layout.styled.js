@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 export const NavWrapper = styled.nav`
   padding: 12px 0;
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   gap: 20px;
