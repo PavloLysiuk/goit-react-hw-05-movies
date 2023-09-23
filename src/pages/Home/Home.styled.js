@@ -6,5 +6,5 @@ export const Title = styled.h1`
   text-align: center;
   text-transform: uppercase;
   font-weight: 800;
-  color: #555555;
+  color: #294ea5;
 `;

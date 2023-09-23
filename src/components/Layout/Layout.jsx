@@ -1,12 +1,17 @@
 import { Outlet } from 'react-router-dom';
-import { NawWrapper, Link } from './Layout.styled';
+import { NavWrapper, Link } from './Layout.styled';
+import { GrFormSearch } from 'react-icons/gr';
+
 export const Layout = () => {
   return (
     <div>
-      <NawWrapper>
-        <Link to="/">Home</Link>
-        <Link to="/movies">Movies</Link>
-      </NawWrapper>
+      <NavWrapper>
+        <Link to="/">Trends</Link>
+        <Link to="/movies">
+          Search
+          <GrFormSearch />
+        </Link>
+      </NavWrapper>
       <Outlet />
     </div>
   );
