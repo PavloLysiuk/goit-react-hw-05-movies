@@ -36,6 +36,7 @@ export const MovieTitle = styled.h2`
   width: 246px;
   text-align: center;
   font-size: 16px;
+  font-weight: 700;
 
   text-decoration: none;
 
@@ -44,13 +45,28 @@ export const MovieTitle = styled.h2`
   text-overflow: ellipsis;
 `;
 
+export const Year = styled.p`
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #ffffff;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+  background-color: green;
+  font-size: 14px;
+  font-weight: 500;
+`;
+
 export const Imdb = styled.p`
   position: absolute;
   top: 8px;
   right: 8px;
   padding: 4px 8px;
   border-radius: 4px;
-  color: #2930a5;
-  background-color: #efc100;
+  color: #ffffff;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+  background-color: orange;
+  font-size: 14px;
   font-weight: 500;
 `;
