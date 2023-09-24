@@ -8,7 +8,7 @@ export const NavWrapper = styled.nav`
   display: flex;
   justify-content: center;
   gap: 20px;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 8px 8px;
   background-color: #294ea5;
 `;
 
@@ -45,11 +45,11 @@ export const Link = styled(NavLink)`
     }
 
     &:hover {
-      background-color: #ffffff;
+      background-color: #efc100;
     }
   }
 
   &.active svg {
-    background-color: #ffffff;
+    background-color: #efc100;
   }
 `;
