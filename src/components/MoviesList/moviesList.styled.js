@@ -6,7 +6,7 @@ export const Overlay = styled.div`
   height: 400px;
   overflow: auto;
   color: #ffffff;
-  transform: translateX(-100%);
+  transform: translateX(-101%);
   padding: 12px;
   background-color: rgba(41, 78, 165, 0.9);
   transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
