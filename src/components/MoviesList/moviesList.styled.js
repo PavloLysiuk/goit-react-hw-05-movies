@@ -16,19 +16,15 @@ export const Item = styled.li`
 
   &:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
+    transform: translateY(-4px);
   }
 `;
 
 export const Image = styled.img`
   display: block;
   width: 100%;
+  max-height: 400px;
   object-fit: cover;
-  transition: filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
-  filter: grayscale(30%);
-  &:hover {
-    filter: grayscale(0%);
-  }
 `;
 
 export const Link = styled(NavLink)`
@@ -54,5 +50,7 @@ export const Imdb = styled.p`
   right: 8px;
   padding: 4px 8px;
   border-radius: 4px;
+  color: #2930a5;
   background-color: #efc100;
+  font-weight: 500;
 `;
