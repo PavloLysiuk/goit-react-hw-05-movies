@@ -27,11 +27,6 @@ export const Link = styled(NavLink)`
   transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &.active,
-  &:hover {
-    color: #ffffff;
-  }
-
   svg {
     width: 16px;
     height: 16px;
@@ -43,13 +38,13 @@ export const Link = styled(NavLink)`
     path {
       stroke: #294ea5;
     }
-
-    &:hover {
-      background-color: #efc100;
-    }
   }
 
-  &.active svg {
-    background-color: #efc100;
+  &.active,
+  &:hover {
+    color: #ffffff;
+    svg {
+      background-color: #efc100;
+    }
   }
 `;

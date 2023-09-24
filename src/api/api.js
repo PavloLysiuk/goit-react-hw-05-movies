@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// const API_KEY = '296730eb54efbbc44cb6aeed23da7d0a';
 const API_KEY =
   'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOTY3MzBlYjU0ZWZiYmM0NGNiNmFlZWQyM2RhN2QwYSIsInN1YiI6IjY1MGRiNzBiMmM2YjdiMDBjNGZlYTNkZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gNpNa83FVHbbmx-R2dssn4Etk7KvHy7NTgJc7WihJm8';
 
@@ -11,7 +11,7 @@ const headers = {
 };
 
 export const fetchTrending = async () => {
-  const url = '/trending/all/day?language=en-US';
+  const url = '/trending/movie/day?language=en-US';
   const resp = await axios.get(url, { headers });
   return resp.data;
 };

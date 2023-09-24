@@ -7,6 +7,7 @@ import {
   MovieTitle,
   Year,
   Imdb,
+  Overlay,
 } from 'components/MoviesList/moviesList.styled';
 
 export const MoviesList = ({ moviesList }) => {
@@ -37,6 +38,15 @@ export const MoviesList = ({ moviesList }) => {
             </Link>
             {isValidDate && <Year>{releaseYear}</Year>}
             <Imdb>IMDB: {movie.vote_average.toFixed(1)}</Imdb>
+            <Overlay>
+              <MovieTitle>{movie.title ?? movie.name}</MovieTitle>
+              {movie.release_date && <p>Release date: {movie.release_date}</p>}
+              <p>
+                IMDB Avg/Votes: {movie.vote_average.toFixed(1)}/
+                {movie.vote_count}
+              </p>
+              <p>{movie.overview}</p>
+            </Overlay>
           </Item>
         );
       })}
