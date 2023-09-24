@@ -42,8 +42,7 @@ export const MoviesList = ({ moviesList }) => {
               <MovieTitle>{movie.title ?? movie.name}</MovieTitle>
               {movie.release_date && <p>Release date: {movie.release_date}</p>}
               <p>
-                IMDB Avg/Votes: {movie.vote_average.toFixed(1)}/
-                {movie.vote_count}
+                IMDB: {movie.vote_average.toFixed(1)} ({movie.vote_count})
               </p>
               <p>{movie.overview}</p>
             </Overlay>
