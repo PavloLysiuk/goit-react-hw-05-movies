@@ -22,6 +22,7 @@ export const fetchMovie = async movieName => {
   return resp.data;
 };
 
+
 export const fetchDetails = async id => {
   const url = `/movie/${id}?language=en-US`;
   const resp = await axios.get(url, { headers });

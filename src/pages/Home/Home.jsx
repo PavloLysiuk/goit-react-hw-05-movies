@@ -4,13 +4,13 @@ import { fetchTrending } from 'api/api';
 import { MovieListWrapper, Title } from './Home.styled';
 
 const Home = () => {
-  const [trending, setTrending] = useState([]);
+  const [moviesList, setMoviesList] = useState([]);
 
   useEffect(() => {
     const getTrending = async () => {
       try {
         const { results } = await fetchTrending();
-        setTrending(results);
+        setMoviesList(results);
       } catch (error) {
         console.log('error', error);
       }
@@ -21,10 +21,12 @@ const Home = () => {
 
   return (
     <main>
-      <Title>Trending today</Title>
-      <MovieListWrapper>
-        <MoviesList moviesList={trending} />
-      </MovieListWrapper>
+      <section>
+        <Title>Trending today</Title>
+        <MovieListWrapper>
+          <MoviesList moviesList={moviesList} />
+        </MovieListWrapper>
+      </section>
     </main>
   );
 };
