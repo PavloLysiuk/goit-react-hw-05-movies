@@ -5,6 +5,7 @@ import {
   Item,
   Image,
   MovieTitle,
+  OverlayTitle,
   Year,
   Imdb,
   Overlay,
@@ -39,7 +40,12 @@ export const MoviesList = ({ moviesList }) => {
             {isValidDate && <Year>{releaseYear}</Year>}
             <Imdb>IMDB: {movie.vote_average.toFixed(1)}</Imdb>
             <Overlay>
-              <MovieTitle>{movie.title ?? movie.name}</MovieTitle>
+              <OverlayTitle>{movie.title}</OverlayTitle>
+              {movie.original_title !== movie.title && (
+                <OverlayTitle>
+                  {movie.original_title ?? movie.name}
+                </OverlayTitle>
+              )}
               {movie.release_date && <p>Release date: {movie.release_date}</p>}
               <p>
                 IMDB: {movie.vote_average.toFixed(1)} ({movie.vote_count})

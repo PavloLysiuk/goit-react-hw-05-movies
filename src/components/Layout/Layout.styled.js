@@ -7,7 +7,7 @@ export const NavWrapper = styled.nav`
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
   border-radius: 0 0 8px 8px;
   background-color: #294ea5;
 `;
@@ -20,7 +20,7 @@ export const Link = styled(NavLink)`
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 4px;
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
   border-radius: 4px;
 
@@ -46,5 +46,30 @@ export const Link = styled(NavLink)`
     svg {
       background-color: #efc100;
     }
+  }
+`;
+
+export const Logo = styled(NavLink)`
+margin-right: 24px;
+  display: flex;
+  align-items: center;
+  color: #efc100;
+  text-transform: uppercase;
+  font-size: 16px;
+
+  font-weight: 900;
+  text-decoration: none;
+
+  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  span {
+    font-weight: 900;
+    color: #ffffff;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
   }
 `;

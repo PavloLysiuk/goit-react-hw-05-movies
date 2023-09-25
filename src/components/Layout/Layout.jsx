@@ -1,14 +1,19 @@
 import { Outlet } from 'react-router-dom';
-import { NavWrapper, Link } from './Layout.styled';
+import { NavWrapper, Logo, Link } from './Layout.styled';
 import { GrFormSearch } from 'react-icons/gr';
+import { TbMovie } from 'react-icons/tb';
 
 export const Layout = () => {
   return (
     <div>
       <NavWrapper>
-        <Link to="/">Trends</Link>
+        <Logo to="/">
+          <TbMovie />
+          Movie<span>Finder</span>
+        </Logo>
+        <Link to="/">Home</Link>
         <Link to="/movies">
-          Search
+          Movies
           <GrFormSearch />
         </Link>
       </NavWrapper>
