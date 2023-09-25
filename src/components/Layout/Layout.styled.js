@@ -19,11 +19,10 @@ export const Link = styled(NavLink)`
   color: #ffffff85;
   text-transform: uppercase;
   font-size: 12px;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   font-weight: 700;
   text-decoration: none;
   border-radius: 4px;
-
   transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -50,16 +49,15 @@ export const Link = styled(NavLink)`
 `;
 
 export const Logo = styled(NavLink)`
-margin-right: 24px;
+  margin-right: 24px;
   display: flex;
   align-items: center;
   color: #efc100;
   text-transform: uppercase;
   font-size: 16px;
-
+  letter-spacing: 1px;
   font-weight: 900;
   text-decoration: none;
-
   transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
