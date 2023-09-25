@@ -11,6 +11,7 @@ import {
   Image,
   Title,
   Link,
+  HomePage,
 } from 'pages/MovieDetails/MovieDetails.styled';
 
 function MovieDetails() {
@@ -47,16 +48,18 @@ function MovieDetails() {
           )}
           <p>{movie.overview}</p>
           {movie.release_date && <p>Release date: {movie.release_date}</p>}
-          {movie.popularity && <p>Popularity: {movie.popularity}</p>}
+          {movie.popularity && <p>Popularity: {movie.popularity.toFixed(0)}</p>}
           {movie.vote_average && (
             <p>
               <span>IMDB</span> {movie.vote_average.toFixed(1)} (
               {movie.vote_count})
             </p>
           )}
-          <a href={movie.homepage} target="_blank" rel="noreferrer">
-            Homepage
-          </a>
+          {movie.homepage && (
+            <HomePage href={movie.homepage} target="_blank" rel="noreferrer">
+              Homepage
+            </HomePage>
+          )}
         </InfoWrapper>
       </ContentWrapper>
       <CastAndOverviewWrapper>

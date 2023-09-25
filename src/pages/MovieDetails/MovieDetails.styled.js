@@ -3,8 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 export const SectionWrapper = styled.section`
   margin: 40px auto;
-  padding: 0 24px;
-  max-width: 1400px;
+  padding: 24px 24px;
+  max-width: 1116px;
+  border-radius: 8px;
+  background-color: #ffffff;
 `;
 
 export const ContentWrapper = styled.div`
@@ -29,19 +31,33 @@ export const InfoWrapper = styled.div`
 
 export const CastAndOverviewWrapper = styled.div`
   margin-top: 24px;
+  padding: 8px 24px;
   display: flex;
+  justify-content: center;
   gap: 24px;
+  border-radius: 8px;
+  background-color: #294ea5;
 `;
 
 export const Image = styled.img`
   width: 380px;
-  border-radius: 16px;
+  border-radius: 8px;
 `;
 
 export const Title = styled.h2`
   margin: 0;
   line-height: 1;
   color: #294ea5;
+`;
+
+export const HomePage = styled.a`
+  text-decoration: none;
+  width: 92px;
+  display: inline-block;
+  background-color: #efc100;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
 `;
 
 export const BackButton = styled.button`
@@ -74,14 +90,16 @@ export const BackButton = styled.button`
 `;
 
 export const Link = styled(NavLink)`
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
-  color: #294ea5;
-  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #ffffff85;
+  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
   &.active,
   &:hover,
   &:focus {
-    color: #ff9f00;
+    color: #ffffff;
   }
 `;

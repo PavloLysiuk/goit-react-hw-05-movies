@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const NavWrapper = styled.nav`
   padding: 12px 0;
-  max-width: 1400px;
+  max-width: 1116px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -22,7 +22,6 @@ export const Link = styled(NavLink)`
   letter-spacing: 2px;
   font-weight: 700;
   text-decoration: none;
-  border-radius: 4px;
   transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
