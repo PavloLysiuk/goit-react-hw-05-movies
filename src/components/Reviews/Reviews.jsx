@@ -8,27 +8,25 @@ const Reviews = () => {
   const [movieReviews, setMovieReviews] = useState([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      fetchReviews(movieId)
-        .then(reviews => {
-          return reviews.results;
-        })
-        .then(reviews => {
-          const reviewList = reviews.map(({ id, author, content }) => {
-            const review = {};
+    fetchReviews(movieId)
+      .then(reviews => {
+        return reviews.results;
+      })
+      .then(reviews => {
+        const reviewList = reviews.map(({ id, author, content }) => {
+          const review = {};
 
-            review.id = id;
-            review.author = author;
-            review.content = content;
+          review.id = id;
+          review.author = author;
+          review.content = content;
 
-            return review;
-          });
-          return reviewList;
-        })
-        .then(reviewList => {
-          setMovieReviews(reviewList);
+          return review;
         });
-    }, 500);
+        return reviewList;
+      })
+      .then(reviewList => {
+        setMovieReviews(reviewList);
+      });
   }, [movieId]);
 
   return (

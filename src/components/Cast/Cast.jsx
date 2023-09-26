@@ -5,7 +5,7 @@ import {
   Image,
   List,
   Item,
-  Blank,
+  NoPhoto,
   InfoWrapper,
   Person,
   Character,
@@ -14,36 +14,30 @@ import {
 const Cast = () => {
   const { movieId } = useParams();
   const [movieCast, setMovieCast] = useState([]);
-  const [, setPending] = useState(false);
 
   useEffect(() => {
-    setPending(true);
+    fetchCast(movieId)
+      .then(credit => {
+        return credit.cast;
+      })
+      .then(cast => {
+        const actorsCollection = cast.map(
+          ({ id, profile_path, name, character }) => {
+            const actor = {};
 
-    setTimeout(() => {
-      fetchCast(movieId)
-        .then(credit => {
-          return credit.cast;
-        })
-        .then(cast => {
-          const actorsCollection = cast.map(
-            ({ id, profile_path, name, character }) => {
-              const actor = {};
+            actor.id = id;
+            actor.profile_path = profile_path;
+            actor.name = name;
+            actor.character = character;
 
-              actor.id = id;
-              actor.profile_path = profile_path;
-              actor.name = name;
-              actor.character = character;
-
-              return actor;
-            }
-          );
-          return actorsCollection;
-        })
-        .then(actorsCollection => {
-          setMovieCast(actorsCollection);
-        })
-        .finally(setPending(false));
-    }, 500);
+            return actor;
+          }
+        );
+        return actorsCollection;
+      })
+      .then(actorsCollection => {
+        setMovieCast(actorsCollection);
+      });
   }, [movieId]);
   return (
     <List>
@@ -56,7 +50,7 @@ const Cast = () => {
                 alt={actor.name}
               />
             ) : (
-              <Blank>No foto</Blank>
+              <NoPhoto>No foto</NoPhoto>
             )}
             <InfoWrapper>
               <Person>{actor.name}</Person>

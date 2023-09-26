@@ -23,7 +23,7 @@ export const Image = styled.img`
   border-radius: 8px;
 `;
 
-export const Blank = styled.div`
+export const NoPhoto = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,6 +45,6 @@ export const Person = styled.p`
 `;
 export const Character = styled.p`
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 12px;
   color: #294ea5;
 `;
