@@ -4,6 +4,7 @@ import {
   Link,
   Item,
   Image,
+  NoPhoto,
   MovieTitle,
   OverlayTitle,
   Year,
@@ -22,11 +23,11 @@ export const MoviesList = ({ moviesList }) => {
         const releaseYear = isValidDate ? releaseDate.getFullYear() : 'Unknown';
         return (
           <Item key={movie.id}>
-            <Image
+            {movie.poster_path ? <Image
               src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
               alt=""
               width="270"
-            />
+            />: <NoPhoto>No poster</NoPhoto>}
             <Link
               to={
                 location.pathname === '/movies'

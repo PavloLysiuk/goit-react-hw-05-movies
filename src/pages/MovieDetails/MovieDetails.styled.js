@@ -37,9 +37,15 @@ export const CastAndOverviewWrapper = styled.div`
   background-color: #294ea5;
 `;
 
-export const Image = styled.img`
-margin-bottom: 24px;
+export const BigPoster = styled.img`
+  margin-bottom: 24px;
   width: 100%;
+  border-radius: 8px;
+`;
+
+export const Poster = styled.img`
+  margin-bottom: 24px;
+  width: 300px;
   border-radius: 8px;
 `;
 

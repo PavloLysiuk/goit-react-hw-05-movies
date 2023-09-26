@@ -47,6 +47,18 @@ export const Image = styled.img`
   object-fit: cover;
 `;
 
+export const NoPhoto = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: #dddddd;
+  color: #888888;
+  font-weight: 500;
+`;
+
 export const Link = styled(NavLink)`
   text-decoration: none;
   color: #294ea5;

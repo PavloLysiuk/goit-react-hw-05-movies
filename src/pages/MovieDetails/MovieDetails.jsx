@@ -8,7 +8,8 @@ import {
   ContentWrapper,
   InfoWrapper,
   CastAndOverviewWrapper,
-  Image,
+  BigPoster,
+  Poster,
   Title,
   Link,
   HomePage,
@@ -33,11 +34,19 @@ function MovieDetails() {
   return (
     <SectionWrapper>
       <ContentWrapper>
-        <Image
-          src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-          alt=""
-          width="300"
-        />
+        {movie.backdrop_path ? (
+          <BigPoster
+            src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+            alt=""
+            width="300"
+          />
+        ) : (
+          <Poster
+            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+            alt=""
+            width="300"
+          />
+        )}
         <InfoWrapper>
           <BackButton type="button" onClick={goBack}>
             <HiMiniArrowRightOnRectangle />

@@ -1,21 +1,22 @@
+import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-
-import { MoviesList } from 'components/MoviesList/MoviesList';
 import { fetchMovie } from 'api/api';
+
 import { GrFormSearch } from 'react-icons/gr';
 import { HiMiniArrowRightOnRectangle } from 'react-icons/hi2';
 import {
-  MovieListWrapper,
+  SearchnWrapper,
   Form,
   Input,
   BackButton,
+  MovieListWrapper,
   SearchButton,
 } from 'pages/Movies/Movie.styled';
 
 const Movies = () => {
-  const [search, setSearch] = useState('');
-  const [movies, setMovies] = useState([]);
+  const [search, setSearch] = useState([]);
+  const [ifSearch, setIfSearching] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const movieName = searchParams.get('name') ?? '';
@@ -23,52 +24,58 @@ const Movies = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function getMovie() {
+    const getMovieList = async () => {
       try {
-        const { result } = await fetchMovie(movieName);
-        setMovies(result);
+        setIfSearching(false);
+        const { results } = await fetchMovie(movieName);
+        setSearch(results);
       } catch (error) {
         console.log('error', error);
+      } finally {
+        setIfSearching(true);
       }
-    }
-
+    };
     if (movieName !== '') {
-      getMovie();
+      getMovieList();
     }
   }, [movieName]);
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    setSearchParams({ query: search });
-    setSearch('');
-  };
-
-  const handleSearch = evt => {
-    setSearch(evt.currentTarget.value);
+    const form = evt.target;
+    const name = evt.target[0].value;
+    setSearchParams({ name });
+    form.reset();
   };
 
   const goBack = () => navigate(-1);
 
   return (
-    <MovieListWrapper>
-      <BackButton type="button" onClick={goBack}>
-        <HiMiniArrowRightOnRectangle />
-      </BackButton>
-      <Form onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          autoComplete="off"
-          autoFocus
-          placeholder="Enter movie title..."
-          onChange={handleSearch}
-          value={search}
-        />
-        <SearchButton type="submit">
-          <GrFormSearch />
-        </SearchButton>
-      </Form>
-      <MoviesList moviesList={movies} />
-    </MovieListWrapper>
+    <>
+      <SearchnWrapper>
+        <BackButton type="button" onClick={goBack}>
+          <HiMiniArrowRightOnRectangle />
+        </BackButton>
+        <Form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            autoComplete="off"
+            autoFocus
+            placeholder="Enter movie title..."
+          />
+          <SearchButton type="submit">
+            <GrFormSearch />
+          </SearchButton>
+        </Form>
+      </SearchnWrapper>
+      <MovieListWrapper>
+        {ifSearch && search.length === 0 ? (
+          <p>No movies found!</p>
+        ) : (
+          <MoviesList moviesList={search} />
+        )}
+      </MovieListWrapper>
+    </>
   );
 };
 
