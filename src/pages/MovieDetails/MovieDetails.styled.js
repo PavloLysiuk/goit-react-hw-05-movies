@@ -9,15 +9,13 @@ export const SectionWrapper = styled.section`
   background-color: #ffffff;
 `;
 
-export const ContentWrapper = styled.div`
-  display: flex;
-  gap: 24px;
-`;
+export const ContentWrapper = styled.div``;
 
 export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 100%;
   p {
     color: #294ea5;
   }
@@ -40,7 +38,8 @@ export const CastAndOverviewWrapper = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 380px;
+margin-bottom: 24px;
+  width: 100%;
   border-radius: 8px;
 `;
 
@@ -51,13 +50,18 @@ export const Title = styled.h2`
 `;
 
 export const HomePage = styled.a`
-  text-decoration: none;
-  width: 92px;
-  display: inline-block;
-  background-color: #efc100;
-  color: #ffffff;
+  width: 105px;
   padding: 4px 8px;
+  color: #ffffff;
+  text-decoration: none;
   border-radius: 4px;
+  background-color: rgba(0, 130, 0, 1);
+  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: rgba(0, 110, 0, 1);
+  }
 `;
 
 export const BackButton = styled.button`
@@ -70,12 +74,12 @@ export const BackButton = styled.button`
   height: 32px;
   border: none;
   border-radius: 4px;
-  background-color: #efc100;
+  background-color: tomato;
   cursor: pointer;
   transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    background-color: #ff9f00;
+    background-color: red;
   }
 
   svg {

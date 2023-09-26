@@ -34,7 +34,7 @@ function MovieDetails() {
     <SectionWrapper>
       <ContentWrapper>
         <Image
-          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
           alt=""
           width="300"
         />
@@ -57,7 +57,7 @@ function MovieDetails() {
           )}
           {movie.homepage && (
             <HomePage href={movie.homepage} target="_blank" rel="noreferrer">
-              Homepage
+              Official Page
             </HomePage>
           )}
         </InfoWrapper>
